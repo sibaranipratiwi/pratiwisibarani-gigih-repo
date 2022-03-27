@@ -23,5 +23,12 @@
     padding: 20px;
     margin : 5px 5px;
     border: dashed #C74B50;
+    border-radius: 20px;
+  }
+
+  .btn {
+    padding: 10px;
+    color: #c74b50;
+    border-radius: 20px;
   }
   
