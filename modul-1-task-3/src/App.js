@@ -1,15 +1,17 @@
 import logo from './logo.svg';
 import "./styles.css";
 import './App.css';
-import data from "./data.js";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Main from "./components/main";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   return (
     <div className="App">
+      <LoginPage />
+
       <Header />
 
       <Main />
