@@ -1,8 +1,14 @@
 import data from "../data";
+import { useState } from "react";
 
 const Main = () => {
+  const [query, setQuery] = useState(""); 
   return (
     <div class="main">
+      <div>
+        <label>Search a song</label>
+        <input type="text" onChange={e => setQuery(e.target.value)}/>
+      </div>
       <h1 class="titleup">Welcome to Bohemian Album</h1>
       <div class="top">
         {data.map((dataalbum, albums) => {
