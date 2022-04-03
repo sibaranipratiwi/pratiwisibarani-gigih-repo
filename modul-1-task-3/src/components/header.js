@@ -1,7 +1,7 @@
 const Header = () => {
     return (
       <header>
-        <h1>Playlist</h1>
+        <h1>Spotif App</h1>
       </header>
     );
   };

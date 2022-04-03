@@ -1,5 +1,10 @@
 const Footer = () => {
-    return <footer>Copyright === West Playlist</footer>;
+    return (
+      <footer>
+        <br></br>
+        Copyright === West Playlist
+      </footer>
+    );
   };
   
   export default Footer;
