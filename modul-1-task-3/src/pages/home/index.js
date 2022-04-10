@@ -1,78 +1,83 @@
-import Modal from "../../components/Modal"
-import React, { useState, useEffect, useRef } from "react";
+import Modal from "../../components/CreatePlaylist";
+import React, { useState, useRef } from "react";
 
-const CreatePlaylist =() => {
-    const [playlist, setPlaylist] = useState({
-        modal: false,
-        playlists: {
-          favorites: new Set(),
-        },
-      });
+const CreatePlaylist = () => {
+  const [playlist, setPlaylist] = useState({
+    modal: false,
+    playlists: {
+      favorites: new Set(),
+    },
+  });
 
-      const playlistRef = useRef(null);
-      const playlists = Object.keys(playlist.playlists);
-    
-      const addPlaylist = (e) => {
-        e.preventDefault();
-        const list = playlistRef.current.value;
-    
-        setPlaylist({
-          ...playlist,
-          modal: false,
-          playlists: { ...playlist.playlists, [list]: new Set() },
-          toast: "Your playlist was created successfully!",
-        });
-      };
+  const playlistRef = useRef(null);
+  const playlists = Object.keys(playlist.playlists);
 
-    return(
-        <div className="playlist">
-            <ul className="Sidebar">
-                <li className="library">List of Playlist</li>
+  const addPlaylist = (e) => {
+    e.preventDefault();
+    const list = playlistRef.current.value;
 
-                    {playlists.map(list => (
-                        <li
-                            key={list}
-                            className={list === playlist.currentPlaylist ? 'active' : ''}
-                            onClick={() => {
-                            setPlaylist({ ...playlist, currentPlaylist: list })
-                            }}
-                        >
-                            {list}
-                        </li>
-                    ))}
-            </ul>
+    setPlaylist({
+      ...playlist,
+      modal: false,
+      playlists: { ...playlist.playlists, [list]: new Set() },
+      toast: "Your playlist was created successfully!",
+    });
+  };
 
-            <h1>Let's Jump To See More Playlist</h1>
-            <button className="new-playist" onClick={() => {
-                setPlaylist({...playlist, modal:true})
-            }}>
-                <span>
-                    Create New Playlist
-                </span>
-            </button>
-            <br></br>
-            <Modal show={playlist.modal} close={() =>{
-                setPlaylist({...playlist, modal:false})
+  return (
+    <div className="playlist">
+      <ul className="Sidebar">
+        <li className="library">List of Playlist</li>
+
+        {playlists.map((list) => (
+          <li
+            key={list}
+            className={list === playlist.currentPlaylist ? "active" : ""}
+            onClick={() => {
+              setPlaylist({ ...playlist, currentPlaylist: list });
             }}
-            >
-                <form onSubmit={addPlaylist}>
-                    <div className="title">New Playlist</div>
+          >
+            {list}
+          </li>
+        ))}
+      </ul>
 
-                        <div className="content-wrap">
-                            <input
-                                className="inputTitle"
-                                type="text"
-                                placeholder="My Playlist"
-                                ref={playlistRef}
-                                required
-                            />
-                        <br />
-                        <button className="buttonPlaylist" type="submit">Create</button>
-                    </div>
-                </form>
-            </Modal>
-        </div>
-    )
-}
+      <h1>Let's Jump To See More Playlist</h1>
+      <button
+        className="new-playist"
+        onClick={() => {
+          setPlaylist({ ...playlist, modal: true });
+        }}
+      >
+        <span>Create New Playlist</span>
+      </button>
+      <br></br>
+      <Modal
+        show={playlist.modal}
+        close={() => {
+          setPlaylist({ ...playlist, modal: false });
+        }}
+      >
+        <form onSubmit={addPlaylist}>
+          <div className="title">New Playlist</div>
+
+          <div className="content-wrap">
+            <input
+              className="inputTitle"
+              type="text"
+              placeholder="My Playlist"
+              ref={playlistRef}
+              required
+            />
+            <br />
+            <button className="buttonPlaylist" type="submit">
+              Create
+            </button>
+          </div>
+        </form>
+      </Modal>
+    </div>
+  );
+};
 
 export default CreatePlaylist;

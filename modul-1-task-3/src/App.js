@@ -1,18 +1,16 @@
-import logo from './logo.svg';
 import "./styles.css";
-import './App.css';
+import "./App.css";
 
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Main from "./components/main";
-import LoginPage from './components/LoginPage';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import LoginPage from "./components/Login";
 
 function App() {
   return (
     <div className="App">
       <Header />
 
-      <LoginPage/>
+      <LoginPage />
 
       {/* <Main /> */}
 

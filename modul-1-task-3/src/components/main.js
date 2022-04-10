@@ -2,7 +2,7 @@ import data from "../data";
 import { useState } from "react";
 
 const Main = () => {
-  const [query, setQuery] = useState(""); 
+  const [setQuery] = useState(""); 
   return (
     <div class="main">
       <div>
@@ -22,7 +22,7 @@ const Main = () => {
                         <div class="topku">
                           <div class="" key={dataimage}>
                             <div class="image">
-                              <img class="img" src={dataimage.url} />
+                              <img class="imageurls" src={dataimage.url} alt="Sorry There is nothing to show"/>
                             </div>
 
                             <p class="title">Title: {dataalbum.name}</p>

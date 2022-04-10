@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Modal from "./Modal";
-import CreatePlaylist from "../pages/home";
+import CreatePlaylist from "../../pages/home";
+
 
 function LoginPage() {
   const CLIENT_ID = "b81e8d623d66405e9d6aaa779ea37555";
