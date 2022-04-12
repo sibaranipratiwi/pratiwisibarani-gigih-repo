@@ -1,0 +1,48 @@
+.titleup {
+  font-family: candara;
+  color: #c74b50;
+}
+
+.top {
+  margin: 5px 5px;
+  width: 100%;
+  position: static;
+}
+
+.topku {
+  padding: 5px 2px;
+  margin: 5px 2px;
+  border: solid #000000;
+  border-radius: 20px;
+}
+
+.playlistSong {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  inline-size: 220px;
+  block-size: 235px;
+  overflow-wrap: break-word;
+  float: left;
+}
+
+.top-mu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imageSong {
+  float: left;
+}
+
+.imageurls {
+  height: 100px;
+  width: 100px;
+}
+
+.songTitle {
+  float: right;
+  text-align: center;
+}

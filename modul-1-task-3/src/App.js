@@ -2,7 +2,6 @@ import "./styles.css";
 import "./App.css";
 
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import LoginPage from "./components/Login";
 
 function App() {
@@ -11,10 +10,6 @@ function App() {
       <Header />
 
       <LoginPage />
-
-      {/* <Main /> */}
-
-      <Footer />
     </div>
   );
 }

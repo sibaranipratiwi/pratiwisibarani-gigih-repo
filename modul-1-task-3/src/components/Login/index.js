@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CreatePlaylist from "../../pages/home";
+import Main from "../Menu";
 
 
 function LoginPage() {
@@ -101,6 +102,9 @@ function LoginPage() {
           )}
 
           {renderArtists()}
+          <div>
+            <Main></Main>
+          </div>
         </div>
       )}
 
@@ -110,7 +114,7 @@ function LoginPage() {
           <button type={"submit"}>Search</button>
         </form>
       ) : (
-        <p>Have Fun to find the song</p>
+        <p></p>
       )}
 
       {renderArtists()}
