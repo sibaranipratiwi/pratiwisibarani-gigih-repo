@@ -1,5 +1,7 @@
 import Modal from "../../components/CreatePlaylist";
 import React, { useState, useRef } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 const CreatePlaylist = () => {
   const [playlist, setPlaylist] = useState({
@@ -43,14 +45,17 @@ const CreatePlaylist = () => {
       </ul>
 
       <h1>Let's Jump To See More Playlist</h1>
-      <button
+      <Button
+        variant="outlined"
+        size="small"
+        color="success"
         className="new-playist"
         onClick={() => {
           setPlaylist({ ...playlist, modal: true });
         }}
       >
         <span>Create New Playlist</span>
-      </button>
+      </Button>
       <br></br>
       <Modal
         show={playlist.modal}
@@ -70,9 +75,15 @@ const CreatePlaylist = () => {
               required
             />
             <br />
-            <button className="buttonPlaylist" type="submit">
+            <Button
+              variant="outlined"
+              size="small"
+              color="success"
+              className="buttonPlaylist"
+              type="submit"
+            >
               Create
-            </button>
+            </Button>
           </div>
         </form>
       </Modal>

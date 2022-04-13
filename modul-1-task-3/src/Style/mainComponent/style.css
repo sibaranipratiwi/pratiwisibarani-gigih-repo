@@ -17,20 +17,10 @@
 }
 
 .playlistSong {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
   inline-size: 220px;
   block-size: 235px;
   overflow-wrap: break-word;
   float: left;
-}
-
-.top-mu {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
 .imageSong {
@@ -38,11 +28,17 @@
 }
 
 .imageurls {
+  border-radius: 25px;
   height: 100px;
   width: 100px;
+  padding: 3px;
 }
 
 .songTitle {
   float: right;
   text-align: center;
+}
+
+.artisName {
+  float: right;
 }

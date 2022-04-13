@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CreatePlaylist from "../../pages/home";
 import Main from "../Menu";
-
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 function LoginPage() {
   const CLIENT_ID = "b81e8d623d66405e9d6aaa779ea37555";
@@ -57,7 +58,7 @@ function LoginPage() {
       <div className="Song">
         <div key={artist.id}>
           {artist.images.length ? (
-            <img width={"50%"} src={artist.images[0].url} alt="" />
+            <img width={"20%"} src={artist.images[0].url} alt="" />
           ) : (
             <div>Not Found</div>
           )}
@@ -77,16 +78,26 @@ function LoginPage() {
       {token ? (
         <div>
           <br></br>
-          <button onClick={logout}>LOGIN</button>
+          <Button
+            variant="outlined"
+            size="small"
+            color="success"
+            onClick={logout}
+          >
+            LOGIN
+          </Button>
         </div>
       ) : (
         <div>
           <br></br>
-          <a
+          <Button
+            variant="outlined"
+            size="small"
+            color="error"
             href={`${SPOTIFY_AUTHORIZE_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL_AFTER_LOGIN}&response_type=${RESPONSE_TYPE}`}
           >
             LOGOUT
-          </a>
+          </Button>
           <CreatePlaylist></CreatePlaylist>
           {!token ? (
             <form onSubmit={searchArtists}>
@@ -110,8 +121,23 @@ function LoginPage() {
 
       {token ? (
         <form onSubmit={searchArtists}>
-          <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
-          <button type={"submit"}>Search</button>
+          <TextField
+            id="outlined-required"
+            label="Find a Song"
+            size="small"
+            color="success"
+            focused
+            type="text"
+            onChange={(e) => setSearchKey(e.target.value)}
+          />
+          <Button
+            variant="outlined"
+            size="small"
+            color="success"
+            type={"submit"}
+          >
+            Search
+          </Button>
         </form>
       ) : (
         <p></p>
