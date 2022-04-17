@@ -58,7 +58,7 @@ function LoginPage() {
       <div className="Song">
         <div key={artist.id}>
           {artist.images.length ? (
-            <img width={"20%"} src={artist.images[0].url} alt="" />
+            <img width={"20%"} src={artist.images[0].url} alt="There is nothing to show" />
           ) : (
             <div>Not Found</div>
           )}

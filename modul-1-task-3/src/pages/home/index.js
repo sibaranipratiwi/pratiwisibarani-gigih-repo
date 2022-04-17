@@ -1,7 +1,6 @@
 import Modal from "../../components/CreatePlaylist";
 import React, { useState, useRef } from "react";
 import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
 
 const CreatePlaylist = () => {
   const [playlist, setPlaylist] = useState({
