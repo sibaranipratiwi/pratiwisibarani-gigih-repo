@@ -5,7 +5,7 @@ const Main = () => {
   return (
     <div className="main">
       <h1 className="titleup">Welcome to Bohemian Album</h1>
-      <div className="top">
+      <div className="top" data-testid="listTrack">
         {data.map((dataalbum, albums) => {
           return (
             <div className="playlistSong" key={albums}>
